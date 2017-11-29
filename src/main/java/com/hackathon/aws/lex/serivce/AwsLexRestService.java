@@ -40,11 +40,11 @@ public class AwsLexRestService {
         final String host = "runtime.lex.us-east-1.amazonaws.com";
         final String region = "us-east-1";
         final String endpoint = "https://runtime.lex.us-east-1.amazonaws.com/";
-        final String accessKey = "AKIAI3Q6WM75JX5QQ77Q";
-        final String secretKey = "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";
+        final String accessKey = "access key";
+        final String secretKey = "secret key";
         final String botName = "identifyDomainBot";
         final String botAlias = "valor_chatbot";
-        final String userId = "634030710425";
+        final String userId = "user id";
         final String postAction = "text";
         final String contentType = "application/json";
         final String canonicalUri = String.format("/bot/%s/alias/%s/user/%s/%s/", botName, botAlias, userId,

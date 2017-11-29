@@ -28,7 +28,7 @@ public class SlackMessagingService {
         params.add(new BasicNameValuePair("text", "Hello valor buoy this side!"));
         params.add(new BasicNameValuePair("username", "ValorBOT"));
         params.add(new BasicNameValuePair("token",
-                "xoxp-276252232500-275550637392-277287328855-4d12bb08b47523bf55a79eca36961406"));
+                "your token"));
         httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
         HttpResponse response = httpclient.execute(httppost);
         HttpEntity entity = response.getEntity();
