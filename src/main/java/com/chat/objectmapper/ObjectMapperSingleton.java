@@ -1,4 +1,4 @@
-package com.chatbot.objectmapper;
+package com.chat.objectmapper;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

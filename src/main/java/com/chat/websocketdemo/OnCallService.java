@@ -1,4 +1,4 @@
-package com.example.websocketdemo;
+package com.chat.websocketdemo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,8 +9,8 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.List;
 
-import com.chatbot.objectmapper.ObjectMapperSingleton;
-import com.example.websocketdemo.model.OnCallResponse;
+import com.chat.objectmapper.ObjectMapperSingleton;
+import com.chat.websocketdemo.model.OnCallResponse;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 public class OnCallService {

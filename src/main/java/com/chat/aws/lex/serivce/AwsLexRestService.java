@@ -1,4 +1,4 @@
-package com.hackathon.aws.lex.serivce;
+package com.chat.aws.lex.serivce;
 
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -22,8 +22,8 @@ import org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.chatbot.objectmapper.ObjectMapperSingleton;
-import com.example.websocketdemo.model.AwsLexServiceResponse;
+import com.chat.objectmapper.ObjectMapperSingleton;
+import com.chat.websocketdemo.model.AwsLexServiceResponse;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

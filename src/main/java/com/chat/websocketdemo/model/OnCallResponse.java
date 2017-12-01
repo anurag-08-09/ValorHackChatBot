@@ -1,4 +1,4 @@
-package com.example.websocketdemo.model;
+package com.chat.websocketdemo.model;
 
 import java.util.Date;
 

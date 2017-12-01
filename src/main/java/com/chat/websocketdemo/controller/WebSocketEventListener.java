@@ -1,6 +1,5 @@
-package com.example.websocketdemo.controller;
+package com.chat.websocketdemo.controller;
 
-import com.example.websocketdemo.model.ChatMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,8 @@ import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.messaging.SessionConnectedEvent;
 import org.springframework.web.socket.messaging.SessionDisconnectEvent;
+
+import com.chat.websocketdemo.model.ChatMessage;
 
 /**
  * Created by rajeevkumarsingh on 25/07/17.
@@ -32,7 +33,7 @@ public class WebSocketEventListener {
         StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
 
         String username = (String) headerAccessor.getSessionAttributes().get("username");
-        if(username != null) {
+        if (username != null) {
             logger.info("User Disconnected : " + username);
 
             ChatMessage chatMessage = new ChatMessage();

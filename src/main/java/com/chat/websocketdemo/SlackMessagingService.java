@@ -1,4 +1,4 @@
-package com.example.websocketdemo;
+package com.chat.websocketdemo;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +14,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 
-import com.chatbot.objectmapper.ObjectMapperSingleton;
+import com.chat.objectmapper.ObjectMapperSingleton;
 
 
 public class SlackMessagingService {
