@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.chat.websocketdemo.model.DBChatMessage;
@@ -12,12 +13,12 @@ import com.chat.websocketdemo.model.DBChatMessage;
 @Repository("productCatalogDaoImpl")
 public class ChatHistoryDAO implements IChatHistoryDAO {
 
-    //@Autowired
+    @Autowired
     ChatHistoryRepository chatHistoryRepository;
 
     @Override
     public List<DBChatMessage> findMessagesByUserName(String username) {
-        return chatHistoryRepository.findMessagesByUserName(username);
+        return chatHistoryRepository.find(username);
     }
 
     @Override

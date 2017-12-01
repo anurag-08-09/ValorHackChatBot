@@ -16,5 +16,6 @@ import com.chat.websocketdemo.model.DBChatMessage;
 public interface ChatHistoryRepository extends JpaRepository<DBChatMessage, Integer> {
 
     @Query("SELECT c FROM DBChatMessage c WHERE c.username = ?1")
-    public List<DBChatMessage> findMessagesByUserName(@Param("username") String username);
+    public List<DBChatMessage> find(@Param("username") String username);
+
 }

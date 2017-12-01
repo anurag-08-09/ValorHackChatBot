@@ -8,6 +8,7 @@ import java.util.List;
 import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -15,6 +16,7 @@ import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
 
 import com.chat.aws.lex.serivce.AwsLexRestService;
+import com.chat.repository.IChatHistoryDAO;
 import com.chat.websocketdemo.OnCallService;
 import com.chat.websocketdemo.SlackMessagingService;
 import com.chat.websocketdemo.model.AwsLexServiceResponse;
@@ -35,8 +37,8 @@ public class ChatController {
 
     private static SlackMessagingService slackMessagingService = new SlackMessagingService();
 
-    //@Autowired
-    //IChatHistoryDAO ChatHistoryDAO;
+    @Autowired
+    IChatHistoryDAO ChatHistoryDAO;
 
 
     @MessageMapping("/chat.sendMessage")
@@ -61,7 +63,7 @@ public class ChatController {
             dbChatMessage.setSender(userName);
             dbChatMessage.setTimestamp(new Date());
             dbChatMessage.setUsername(userName);
-            //ChatHistoryDAO.saveChatMessage(dbChatMessage);
+            ChatHistoryDAO.saveChatMessage(dbChatMessage);
 
         } catch (JSONException e) {
             logger.info("some error occurred while processing request {}", e);
@@ -73,6 +75,7 @@ public class ChatController {
     @SendTo("/channel/public")
     public ChatMessage addUser(@Payload ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
         headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
+        logger.info(ChatHistoryDAO.findMessagesByUserName("http://shakti13.hdc1.des.co:8080")+"");
         return chatMessage;
     }
 
